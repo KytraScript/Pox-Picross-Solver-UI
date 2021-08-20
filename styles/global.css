@@ -4,7 +4,7 @@ body {
     margin: 0;
 }
 
-.container{
+.board-grid{
     display: grid;
     grid-template-columns: 16px 16px 16px 16px 16px 16px 16px 16px 16px 16px;
     grid-template-rows: 16px 16px 16px 16px 16px 16px 16px 16px 16px 16px;
