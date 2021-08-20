@@ -51,21 +51,11 @@ export default class NavExample extends React.Component {
     render() {
         return (
             <Navbar type="dark" theme="primary" expand="md">
-                <NavbarBrand href="#">Shards React</NavbarBrand>
+                <NavbarBrand href="#">Pox and Petra's Picross Solver</NavbarBrand>
                 <NavbarToggler onClick={this.toggleNavbar} />
 
                 <Collapse open={this.state.collapseOpen} navbar>
                     <Nav navbar>
-                        <NavItem>
-                            <NavLink active href="#">
-                                Active
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="#" disabled>
-                                Disabled
-                            </NavLink>
-                        </NavItem>
                         <Dropdown
                             open={this.state.dropdownOpen}
                             toggle={this.toggleDropdown}
@@ -74,9 +64,10 @@ export default class NavExample extends React.Component {
                                 Dropdown
                             </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem>Action</DropdownItem>
-                                <DropdownItem>Another action</DropdownItem>
-                                <DropdownItem>Something else here</DropdownItem>
+                                <DropdownItem href="#five-grid">5 x 5</DropdownItem>
+                                <DropdownItem href="#ten-grid">10 x 10</DropdownItem>
+                                <DropdownItem href="#fifteen-grid">15 x 15</DropdownItem>
+                                <DropdownItem href="#twenty-grid">20 x 20</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                     </Nav>
