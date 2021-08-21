@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { Progress } from "shards-react";
 
-const data = require('../sample_data.js')
+let data = require('../sample_data.js');
+data = data.framesArr20;
 
 const PrintBoard =({ dataset }) => {
     return (
@@ -10,7 +11,7 @@ const PrintBoard =({ dataset }) => {
                 if (Number(entry)) {
                     return <div className="square" key={idx} style={{backgroundColor: 'black'}}/>;
                 } else {
-                    return <div className="square" key={idx} style={{backgroundColor: 'white'}}/>;
+                    return <div className="square" key={idx} style={{backgroundColor: '#c3c3c3'}}/>;
                 }
             })}
         </div>

@@ -82,14 +82,14 @@ export default class NavExample extends React.Component {
                     </Nav>
 
                     <Nav navbar className="ml-auto">
-                        <InputGroup size="sm" seamless>
-                            <InputGroupAddon type="prepend">
-                                <InputGroupText>
-                                    {/* There was an icon here at one point*/}
-                                </InputGroupText>
-                            </InputGroupAddon>
-                            <FormInput className="border-0" placeholder="Search..."/>
-                        </InputGroup>
+                        {/*<InputGroup size="sm" seamless>*/}
+                        {/*    <InputGroupAddon type="prepend">*/}
+                        {/*        <InputGroupText>*/}
+                        {/*            /!* There was an icon here at one point*!/*/}
+                        {/*        </InputGroupText>*/}
+                        {/*    </InputGroupAddon>*/}
+                        {/*    <FormInput className="border-0" placeholder="Search..."/>*/}
+                        {/*</InputGroup>*/}
                     </Nav>
                 </Collapse>
             </Navbar>

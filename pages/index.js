@@ -15,12 +15,21 @@ function Home({router}) {
         router.push(pathString, undefined, {shallow: true});
     };
 
+    const removePrimary = () => {
+        let element = document.querySelector('.navbar');
+        element.classList.remove('bg-primary');
+    };
+
+    useEffect( () => {
+        removePrimary()
+    }, []);
+
     return (
         <>
             <Head>
                 <title>Picross Solver</title>
             </Head>
-            <>
+            <body>
                 <Navigation routerAction={pushRouter}/>
                 <Container className="board-container" fluid>
                     <Row className={"content-row"}>
@@ -33,10 +42,10 @@ function Home({router}) {
                             {router.query.board === '15' ? 'THIS WOULD BE A 15 x 15' : ''}
                             {router.query.board === '20' ? <TwentyGrid/> : ''}
                         </Col>
-                        <Col>3 / 3</Col>
+                        <Col></Col>
                     </Row>
                 </Container>
-            </>
+            </body>
         </>
     );
 }

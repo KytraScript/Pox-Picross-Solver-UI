@@ -1,19 +1,47 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
+import { Progress } from "shards-react";
 
-const TenGrid = () => {
+let data = require('../sample_data.js');
+data = data.framesArr10;
 
-    const [dataset, getDataset] = useState([1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1,]);
-
+const PrintBoard =({ dataset }) => {
     return (
         <div className={'board-grid'}>
             {dataset.map((entry, idx) => {
-                if (entry) {
-                    return <div key={idx} style={{backgroundColor: 'black'}}/>;
+                if (Number(entry)) {
+                    return <div className="square" key={idx} style={{backgroundColor: 'black'}}/>;
                 } else {
-                    return <div key={idx} style={{backgroundColor: 'white'}}/>;
+                    return <div className="square" key={idx} style={{backgroundColor: '#c3c3c3'}}/>;
                 }
             })}
         </div>
+    );
+}
+
+function TenGrid(){
+
+    const [dataset, getDataset] = useState([]);
+    const [progress, setProgress] = useState(0)
+
+    const updateFrames = (now = 0) => {
+        setProgress(now)
+        if(now < data.length){
+            setTimeout(updateFrames.bind(null, now + 1), 175)
+            getDataset(data[now].split(''));
+        }
+    }
+
+    useEffect(() => {
+        updateFrames(0)
+    }, []);
+
+    return (
+        <>
+            <PrintBoard dataset={dataset}/>
+            <Progress className="progress-lg solution-progress" theme="warning" value={progress * (100 / data.length)}>
+                Pass {progress.toString()} of {data.length.toString()}
+            </Progress>
+        </>
     );
 };
 
