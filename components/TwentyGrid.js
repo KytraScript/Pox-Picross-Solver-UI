@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { Progress } from "shards-react";
+import Inputs20 from '../components/Inputs20.js'
 
 let data = require('../sample_data.js');
 data = data.framesArr20;
@@ -37,6 +38,7 @@ function TwentyGrid(){
 
     return (
         <>
+            <Inputs20/>
             <PrintBoard dataset={dataset}/>
             <Progress className="progress-lg solution-progress" theme="warning" value={progress * (100 / data.length)}>
                 Pass {progress.toString()} of {data.length.toString()}
