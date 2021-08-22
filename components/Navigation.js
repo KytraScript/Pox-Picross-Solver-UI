@@ -62,7 +62,7 @@ export default class NavExample extends React.Component {
                             toggle={this.toggleDropdown}
                         >
                             <DropdownToggle nav caret>
-                                Board Sizes
+                                <span className={"white-80a"}>Board Sizes</span>
                             </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem onClick={ () => this.props.routerAction('/?board=5')}>

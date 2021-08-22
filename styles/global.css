@@ -95,3 +95,8 @@ body {
 .navbar{
     background-color: #03DAC6 !important;
 }
+
+.white-80a{
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 600;
+}
