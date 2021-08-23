@@ -15,7 +15,7 @@ const Inputs = (props) => {
 
     return (
         <div className={`input-wrapper ${props.orientation}`}>
-            {sizeInit.length && sizeInit.map((e, idx) => {
+            {sizeInit.map((e, idx) => {
                 return <RuleSet size={props.size} orientation={direction} key={direction + '-' + idx} id={direction + '-' + idx}/>;
             })}
         </div>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Progress, Button} from 'shards-react';
 import Inputs from '../components/Inputs.js';
-
+const obtain = require('../scripts/obtain.js');
 let data = require('../sample_data.js');
 data = data.framesArr20;
 
@@ -29,7 +29,7 @@ function Grid(props) {
 
     const collectValues = () => {
 
-    }
+    };
 
     const updateFrames = (now = 0) => {
         setProgress(now);
@@ -44,17 +44,21 @@ function Grid(props) {
     }, []);
 
     return (
-        <div className={'center-row'}>
-            <Inputs size={props.size} orientation={'col-wrap'}/>
+        <>
             <div className={'center-col'}>
                 <Inputs size={props.size} orientation={'row-wrap'}/>
-                <PrintBoard dataset={dataset} size={props.size}/>
-                <Button onClick={() => {}}>Save Values</Button>
-                <Progress className="progress-lg solution-progress" theme="warning" value={progress * (100 / data.length)}>
-                    Pass {progress.toString()} of {data.length.toString()}
-                </Progress>
+                <div className={'center-row'}>
+                    <Inputs size={props.size} orientation={'col-wrap'}/>
+                    <div className={'center-col'}>
+                        <PrintBoard dataset={dataset} size={props.size}/>
+                    </div>
+                </div>
             </div>
-        </div>
+            <Button onClick={obtain}>Save Values</Button>
+            {/*<Progress className="progress-lg solution-progress" theme="warning" value={progress * (100 / data.length)}>*/}
+            {/*    Pass {progress.toString()} of {data.length.toString()}*/}
+            {/*</Progress>*/}
+        </>
     );
 };
 
