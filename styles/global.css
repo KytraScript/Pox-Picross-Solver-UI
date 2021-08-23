@@ -15,13 +15,28 @@ body {
 }
 
 .rule-wrapper{
-    margin: 0 !important;
+ display: flex;
 }
 
 .rule-col{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border-right: rgba(0, 139, 139, 1) 2px solid;
+}
+
+.rule-col:last-child{
+    border-right: none;
+}
+
+.rule-row{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: rgba(0, 139, 139, 1) 2px solid;
+}
+
+.rule-row:last-child{
+    border-bottom: none;
 }
 
 .board-container{
@@ -32,12 +47,30 @@ body {
     background-color: #424242;
 }
 
-.board-grid{
+.board-grid-5{
     display: grid;
-    grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
-    grid-template-rows: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
+    grid-template-columns: 22px 22px 22px 22px 22px;
+    grid-template-rows: 22px 22px 22px 22px 22px;
     grid-auto-flow: row;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.board-grid-10{
+    display: grid;
+    grid-template-columns: 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px;
+    grid-template-rows: 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px;
+    grid-auto-flow: row;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.board-grid-15{
+    display: grid;
+    grid-template-columns: 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px;
+    grid-template-rows: 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px;
+    grid-auto-flow: row;
+    margin-top: 15px;
     margin-bottom: 30px;
 }
 
@@ -46,7 +79,7 @@ body {
     grid-template-columns: 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px;
     grid-template-rows: 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px 22px;
     grid-auto-flow: row;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 30px;
     /* 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px; */
 }
@@ -67,8 +100,9 @@ body {
 
 .input-wrapper{
     display: flex;
-    flex-direction: row;
     align-items: center;
+    margin-top: 30px;
+
 }
 
 .input-col{
@@ -113,4 +147,19 @@ body {
 .white-80a{
     color: rgba(255, 255, 255, 0.8) !important;
     font-weight: 600;
+}
+
+.center-row{
+    display: flex;
+}
+
+.center-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.col-wrap{
+    flex-direction: column;
+    margin-top: 206px;
+    margin-right: 15px;
 }

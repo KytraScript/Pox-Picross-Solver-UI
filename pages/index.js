@@ -1,13 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navigation from '../components/Navigation';
-import TenGrid from '../components/TenGrid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'shards-ui/dist/css/shards.min.css';
 import {Container, Row, Col} from 'shards-react';
-import {Form, FormInput, FormGroup} from 'shards-react';
 import {withRouter} from 'next/router';
-import TwentyGrid from '../components/TwentyGrid';
+import Grid from '../components/Grid.js';
 
 function Home({router}) {
 
@@ -29,7 +27,6 @@ function Home({router}) {
             <Head>
                 <title>Picross Solver</title>
             </Head>
-            <body>
                 <Navigation routerAction={pushRouter}/>
                 <Container className="board-container" fluid>
                     <Row className={"content-row"}>
@@ -37,15 +34,16 @@ function Home({router}) {
 
                         </Col>
                         <Col className={"board-column"}>
-                            {router.query.board === '5' ? 'THIS WOULD BE A 5 x 5' : ''}
-                            {router.query.board === '10' ? <TenGrid/> : ''}
-                            {router.query.board === '15' ? 'THIS WOULD BE A 15 x 15' : ''}
-                            {router.query.board === '20' ? <TwentyGrid/> : ''}
+                            {router.query.board === '5' ? <Grid size={5}/> : ''}
+                            {router.query.board === '10' ? <Grid size={10}/> : ''}
+                            {router.query.board === '15' ? <Grid size={15}/> : ''}
+                            {router.query.board === '20' ? <Grid size={20}/> : ''}
                         </Col>
-                        <Col></Col>
+                        <Col>
+
+                        </Col>
                     </Row>
                 </Container>
-            </body>
         </>
     );
 }
